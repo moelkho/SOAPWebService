@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://services/" targetNamespace="http://services/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="AjouterArticle" type="tns:AjouterArticle" />
+  <xs:element name="AjouterArticleResponse" type="tns:AjouterArticleResponse" />
+  <xs:element name="SupprimerArticle" type="tns:SupprimerArticle" />
+  <xs:element name="SupprimerArticleResponse" type="tns:SupprimerArticleResponse" />
+  <xs:complexType name="SupprimerArticle">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="titre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SupprimerArticleResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AjouterArticle">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="article" type="tns:article" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="article">
+    <xs:sequence>
+      <xs:element name="dislike" type="xs:boolean" />
+      <xs:element minOccurs="0" name="id" type="xs:string" />
+      <xs:element minOccurs="0" name="image" type="xs:base64Binary" />
+      <xs:element name="like" type="xs:boolean" />
+      <xs:element minOccurs="0" name="texte" type="xs:string" />
+      <xs:element minOccurs="0" name="title" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AjouterArticleResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
